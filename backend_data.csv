@@ -1,0 +1,11 @@
+Product_ID,Product_Name,Category,Price,Stock_Quantity,Description
+101,Smartphone,Electronics,699.99,150,Latest model smartphone with 128GB storage and 5G connectivity.
+102,Laptop,Electronics,1199.99,75,High-performance laptop with Intel i7 processor and 16GB RAM.
+103,Headphones,Accessories,199.99,300,Noise-canceling wireless headphones with long battery life.
+104,Refrigerator,Appliances,849.99,50,Energy-efficient refrigerator with 500L capacity and fast cooling.
+105,Smartwatch,Electronics,249.99,200,Feature-rich smartwatch with health monitoring and GPS.
+106,Vacuum Cleaner,Appliances,299.99,120,Compact and powerful vacuum cleaner with multiple attachments.
+107,Desk Chair,Furniture,149.99,100,Ergonomic desk chair with adjustable height and lumbar support.
+108,Microwave Oven,Appliances,99.99,80,Compact microwave oven with quick heating and defrost options.
+109,Electric Kettle,Appliances,49.99,250,Stainless steel electric kettle with auto shut-off feature.
+110,Bookshelf,Furniture,89.99,60,Wooden bookshelf with five adjustable shelves for storage.
