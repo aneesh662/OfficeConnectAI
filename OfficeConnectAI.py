@@ -55,7 +55,7 @@ def main():
         st.success("Backend Data loaded successfully!")
 
         st.subheader("Data Preview:")
-        st.dataframe(csv_data.head())  # Show the first few rows of the CSV
+        st.dataframe(csv_data.head(2))  # Show the first few rows of the CSV
 
         # Provide an option to download the backend CSV
        # csv_download_link = csv_data.to_csv(index=False).encode("utf-8")
@@ -93,7 +93,7 @@ def main():
 
     # Footer
     st.markdown("---")
-    st.markdown("**Note:** This is an interactive AI chatbot integrated with a predefined backend CSV file.")
+    #st.markdown("**Note:** This is an interactive AI chatbot integrated with a predefined backend CSV file.")
 
 if __name__ == "__main__":
     main()
