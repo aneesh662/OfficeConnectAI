@@ -5,7 +5,7 @@ import google.generativeai as genai
 import pandas as pd
 
 # Configure Google Generative AI
-genai.configure(api_key="Key")
+genai.configure(api_key="AIzaSyC_t0wvmafmoDMQMBRWXN0fpdUIrdi2NXI")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 def sanitize_text(text):
@@ -27,9 +27,8 @@ def export_to_pdf(response_text):
         return tmpfile.name
 
 def load_backend_csv():
-    #"""Load the predefined backend CSV file."""
-
-    csv_path = "backend_data.csv"  # Path  CSV file
+    """Load the predefined backend CSV file."""
+    csv_path = "backend_data.csv"  # Path to the CSV file
     try:
         df = pd.read_csv(csv_path)
         return df
@@ -40,11 +39,31 @@ def load_backend_csv():
         st.error(f"Error loading backend CSV file: {e}")
         return None
 
+# Hide all Streamlit branding and default elements
+#hide_st_style = """
+   # <style>
+    #MainMenu {visibility: hidden !important;} /* Hides the hamburger menu */
+   # header {visibility: hidden !important;}    /* Hides the header */
+   # footer {visibility: hidden !important;}    /* Hides the footer */
+   # .stApp {margin-top: -50px;}                /* Adjusts spacing after hiding the header */
+   # [data-testid="stDecoration"] {visibility: hidden !important;} /* Hides Streamlit branding */
+   # .viewerBadge_container__1QSob {display: none !important;}    /* Hides footer badge */
+   # .stFooter {visibility: hidden !important;} /* Hides the footer section */
+   # .css-14xtw13 {visibility: hidden !important;} /* Additional footer class */
+   # </style>
+#"""
+#st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
+
+# Set up page configuration at the start
+st.set_page_config(page_title="OfficeConnect AI", page_icon="📄")
+
+#st.markdown(hide_st_style, unsafe_allow_html=True)
+
 def main():
-    st.set_page_config(page_title="OfficeConnect AI", page_icon="📄")
     st.title("OfficeConnect AI")
     st.markdown("Developed by : **Aneesh Mohanan**")
-   # st.markdown("Predefined Data file as backend with AI chatbot integration.")
     st.markdown("---")
 
     # Load backend CSV
@@ -56,15 +75,6 @@ def main():
 
         st.subheader("Data Preview:")
         st.dataframe(csv_data.head(2))  # Show the first few rows of the CSV
-
-        # Provide an option to download the backend CSV
-       # csv_download_link = csv_data.to_csv(index=False).encode("utf-8")
-       # st.download_button(
-       #     label="Download Backend CSV",
-       #     data=csv_download_link,
-       #     file_name="backend_data.csv",
-       #     mime="text/csv"
-       # )
 
         # Input for user question
         user_question = st.text_input("Ask a question about the CSV content:")
@@ -93,7 +103,6 @@ def main():
 
     # Footer
     st.markdown("---")
-    #st.markdown("**Note:** This is an interactive AI chatbot integrated with a predefined backend CSV file.")
 
 if __name__ == "__main__":
     main()
