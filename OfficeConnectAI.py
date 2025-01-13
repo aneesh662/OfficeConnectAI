@@ -5,7 +5,7 @@ import google.generativeai as genai
 import pandas as pd
 
 # Configure Google Generative AI
-genai.configure(api_key="AIzaSyC_t0wvmafmoDMQMBRWXN0fpdUIrdi2NXI")
+genai.configure(api_key="KEY")
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 def sanitize_text(text):
